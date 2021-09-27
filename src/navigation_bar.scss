@@ -1,0 +1,56 @@
+.navigation-container{
+  display: inline-flex;
+  flex-flow: row;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+
+  nav{
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.875rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.86;
+    letter-spacing: normal;
+    color: white;
+
+  }
+
+  div{
+    margin-left: 10%;
+  }
+
+  #contact{
+    margin-top: 1%;
+    margin-right: 10%;
+    width: 8.688rem;
+    height: 2.625rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.75rem 0.063rem 0.75rem 0;
+    border: solid 1px white;
+    background: none;
+    color: white;
+    font-size: 0.938rem;
+    font-weight: bold;
+  }
+  .logo-container{
+    margin-left: 0;
+  }
+}
+
+.nav-link{
+  color: white;
+  text-decoration: none;
+}
+
+.nav-link:hover, .selected-nav-link {
+  color: #ffc004;
+}
+
+#contact:hover {
+  cursor: pointer;
+}
+

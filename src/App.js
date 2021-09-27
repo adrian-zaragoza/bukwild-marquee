@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import './App.scss';
+import './page.scss';
+import './navigation_bar.scss';
+import React from 'react';
+import Page from './components/page'
+import NavigationBar from './components/navigation_bar';
+import { withRouter } from 'react-router';
+import { pages } from './data/pages.json';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const App = ({ location }) => {
+  let pagesTitles = [];
+
+  pages.forEach((page, index) => {
+    pagesTitles.push([page.title, page.slug]);
+  });
+
+  return(
+  <div className="App">
+    <NavigationBar pathname={location.pathname} pagesTitles={pagesTitles}/>
+    <Switch> 
+      {pages.map((pageData) =>(
+        <Route key={pageData.title} path={`/${pageData.slug}`}>
+          <Page pageData={pageData.blocks[0]} />
+        </Route>
+      ))}
+      <Redirect to="/industries" />
+    </Switch>
+  </div>
   );
 }
 
-export default App;
+export default withRouter(App);
