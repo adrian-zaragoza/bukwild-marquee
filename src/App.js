@@ -3,21 +3,22 @@ import './App.scss';
 import './page.scss';
 import './navigation_bar.scss';
 import React from 'react';
-import Page from './components/page'
+import Page from './components/page';
 import NavigationBar from './components/navigation_bar';
-import { withRouter } from 'react-router';
 import { pages } from './data/pages.json';
 
-const App = ({ location }) => {
+const App = () => {
   let pagesTitles = [];
 
-  pages.forEach((page, index) => {
+  pages.forEach((page) => {
     pagesTitles.push([page.title, page.slug]);
   });
 
+  
+
   return(
   <div className="App">
-    <NavigationBar pathname={location.pathname} pagesTitles={pagesTitles}/>
+    <NavigationBar pagesTitles={pagesTitles}/>
     <Switch> 
       {pages.map((pageData) =>(
         <Route key={pageData.title} path={`/${pageData.slug}`}>
@@ -30,4 +31,4 @@ const App = ({ location }) => {
   );
 }
 
-export default withRouter(App);
+export default App;
