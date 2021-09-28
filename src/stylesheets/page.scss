@@ -91,6 +91,11 @@
   button:hover {
     cursor: pointer;
   }
+
+  span{
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
 }
 
 @media screen and (max-width: 701px) {
