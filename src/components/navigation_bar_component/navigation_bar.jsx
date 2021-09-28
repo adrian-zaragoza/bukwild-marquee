@@ -10,6 +10,7 @@ const NavigationBar = ({ pagesTitles, partyController }) => {
             <img src="/abc_logo.svg" alt="abc-logo" />
           </figure>
           <nav>
+            {/* mapping each pageTitle data to a NavLink to easily create navigational links */}
             {pagesTitles.map((pageTitle) =>
               <NavLink key={pageTitle[1]} className={`nav-link`} activeStyle={{color: "#ffc004"}} to={pageTitle[1]}>{pageTitle[0]}</NavLink>
             )}
