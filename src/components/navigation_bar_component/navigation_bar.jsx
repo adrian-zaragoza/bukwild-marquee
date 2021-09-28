@@ -1,12 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const NavigationBar = ({ pagesTitles }) => {
-  let music = new Audio("/We_Like_To_Party.mp3");
-
-  const playMusic = () => {
-    music.play();
-  };
+const NavigationBar = ({ pagesTitles, partyController }) => {
 
   return(
       <header className="navigation-container">
@@ -20,7 +15,7 @@ const NavigationBar = ({ pagesTitles }) => {
             )}
           </nav>
         </div>
-        <button id="contact" onClick={playMusic}>Contact Us</button>
+        <button id="contact" onClick={partyController}>Contact Us</button>
       </header>
   );
 }
